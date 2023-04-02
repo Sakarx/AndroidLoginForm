@@ -1,6 +1,9 @@
 package com.example.loginform;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +11,7 @@ import android.widget.Button;
 
 public class fragments extends AppCompatActivity {
 
-    Button firstFragmentBtn, secondFragmentBtn;
+    Button firstFragmentBtn, secondFragmentBtn; //declaring the button to reference the fragments
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,15 @@ public class fragments extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    private void replaceFragment(Fragment fragment) {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction =fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout,fragment);
+        fragmentTransaction.commit();
 
     }
 }
