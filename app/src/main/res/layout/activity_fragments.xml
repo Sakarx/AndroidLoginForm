@@ -9,12 +9,12 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="600dp"
-        android:id="@+id/fragmentFrame"/>
+        android:id="@+id/frameLayout"/>
 
         <Button
+            android:id="@+id/btnFragment1"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:id="@+id/btnFragment1"
             android:text="fragment 1"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="50dp"
@@ -22,9 +22,9 @@
        />
 
         <Button
+            android:id="@+id/btnFragment2"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:id="@+id/btnFragment2"
             android:text="fragment 2"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="50dp"
