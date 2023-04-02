@@ -20,14 +20,14 @@ public class fragments extends AppCompatActivity {
         firstFragmentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(new fragment1());
+                replaceFragment(new Fragment1());
             }
         });
 
         secondFragmentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(new fragment2());
+                replaceFragment(new Fragment2());
             }
         });
 
