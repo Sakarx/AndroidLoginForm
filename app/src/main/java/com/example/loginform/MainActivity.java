@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                     //successfull login
                     Toast.makeText(MainActivity.this, "LOGIN SUCCESSFULL", Toast.LENGTH_SHORT).show();
 
-                    Intent goToDashboard = new Intent(MainActivity.this,fragments.class);
+                    Intent goToDashboard = new Intent(MainActivity.this,Dashboard.class);
                     goToDashboard.putExtra("KEY_USERNAME",username.getText().toString());
 
                     startActivity(goToDashboard);

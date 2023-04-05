@@ -15,10 +15,5 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        TextView welcome = findViewById(R.id.welcome);
-
-        Intent dashboardIntent = getIntent();
-        String recievedValue = dashboardIntent.getStringExtra("KEY_USERNAME");
-        welcome.setText("Welcome, "+recievedValue);
     }
 }
