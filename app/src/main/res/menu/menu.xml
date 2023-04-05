@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainMenu">
+
+    <item
+        android:id="@+id/menu1"
+        android:title="Menu Item 1">
+
+    </item>
+    <item android:id="@+id/menu2"
+        android:title="Menu Item 2" >
+        <!-- "file" submenu -->
+        <menu>
+            <item android:id="@+id/create_new"
+                android:title="Sub menu 1" />
+            <item android:id="@+id/open"
+                android:title="Sub menu 2" />
+        </menu>
+    </item>
+
+    <item android:id="@+id/menu3"
+        android:title="Menu Item 3"/>
+</menu>
