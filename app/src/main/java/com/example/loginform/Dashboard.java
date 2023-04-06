@@ -18,8 +18,6 @@ import org.w3c.dom.Text;
 
 public class Dashboard extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
-    Button popUp = findViewById(R.id.btnPopUp);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +48,11 @@ public class Dashboard extends AppCompatActivity implements PopupMenu.OnMenuItem
 
     public void showPopup(View view){
         PopupMenu popupMenu = new PopupMenu(this,view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
         popupMenu.setOnMenuItemClickListener(this);
-        popupMenu.inflate(R.menu.popup_menu);
+        inflater.inflate(R.menu.popup_menu,popupMenu.getMenu());
         popupMenu.show();
     }
-
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
         int itemId = menuItem.getItemId();
