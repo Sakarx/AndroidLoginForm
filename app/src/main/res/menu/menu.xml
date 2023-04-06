@@ -12,9 +12,9 @@
         android:title="Menu Item 2" >
         <!-- "file" submenu -->
         <menu>
-            <item android:id="@+id/create_new"
+            <item android:id="@+id/submenu1"
                 android:title="Sub menu 1" />
-            <item android:id="@+id/open"
+            <item android:id="@+id/submenu2"
                 android:title="Sub menu 2" />
         </menu>
     </item>
