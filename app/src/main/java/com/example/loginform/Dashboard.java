@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ public class Dashboard extends AppCompatActivity implements PopupMenu.OnMenuItem
 
     }
 
+    //For Options or Overflow menu
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
@@ -46,6 +48,15 @@ public class Dashboard extends AppCompatActivity implements PopupMenu.OnMenuItem
         return super.onOptionsItemSelected(item);
     }
 
+    //For context menu
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = new MenuInflater(this);
+        inflater.inflate(R.menu.menu_context,menu);
+    }
+
+    //For Popup menu
     public void showPopup(View view){
         PopupMenu popupMenu = new PopupMenu(this,view);
         MenuInflater inflater = popupMenu.getMenuInflater();
