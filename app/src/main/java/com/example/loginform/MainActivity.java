@@ -1,10 +1,15 @@
 package com.example.loginform;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,17 +32,37 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(username.getText().toString().equals("admin")&& password.getText().toString().equals("admin")){
                     //successfull login
-                    Toast.makeText(MainActivity.this, "LOGIN SUCCESSFULL", Toast.LENGTH_SHORT).show();
+                    showSuccessDialog();
 
-                    Intent goToDashboard = new Intent(MainActivity.this,Dashboard.class);
-                    goToDashboard.putExtra("KEY_USERNAME",username.getText().toString());
-
-                    startActivity(goToDashboard);
-                    finish();
                 }else {
                     Toast.makeText(MainActivity.this, "LOGIN FAILED!!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    private void showSuccessDialog() {
+        ConstraintLayout successConstraintLayout  = findViewById(R.id.successConstraintLayout);
+        View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.success_dialog,successConstraintLayout);
+        Button successDone = view.findViewById(R.id.successDone);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setView(view);
+        final AlertDialog alertDialog = builder.create();
+
+        successDone.findViewById(R.id.successDone).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+                Toast.makeText(MainActivity.this, "Logged in!!", Toast.LENGTH_SHORT).show();
+                Intent goToDashboard = new Intent(MainActivity.this,Dashboard.class);
+                startActivity(goToDashboard);
+                finish();
+            }
+        });
+        if(alertDialog.getWindow()!=null){
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        alertDialog.show();
     }
 }

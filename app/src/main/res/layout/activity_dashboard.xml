@@ -24,5 +24,4 @@
         android:layout_marginBottom="85dp"
         android:text="This is for context menu"
         android:textIsSelectable="true" />
-
 </RelativeLayout>
